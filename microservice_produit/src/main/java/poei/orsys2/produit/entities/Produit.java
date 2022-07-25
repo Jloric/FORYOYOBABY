@@ -2,15 +2,17 @@ package poei.orsys2.produit.entities;
 
 
 
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlRootElement;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-
-
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement
 @Entity
 public class Produit {
-
-
     @Id @GeneratedValue
     private int id;
 

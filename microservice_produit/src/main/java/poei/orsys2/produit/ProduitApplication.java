@@ -1,6 +1,5 @@
 package poei.orsys2.produit;
 
-import jakarta.xml.ws.Endpoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
