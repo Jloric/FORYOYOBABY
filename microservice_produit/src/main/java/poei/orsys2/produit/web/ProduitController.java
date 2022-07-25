@@ -26,7 +26,6 @@ public class ProduitController {
                          @RequestParam(name="size",defaultValue = "4") int size) {
         Page<Produit> listProduits = produitRepository.findAll(PageRequest.of(page,size));
         int[] pages = new int[listProduits.getTotalPages()];
-
         model.addAttribute("listPrd",listProduits.getContent());
         model.addAttribute("prd", new Produit());
         model.addAttribute("pages",pages);
