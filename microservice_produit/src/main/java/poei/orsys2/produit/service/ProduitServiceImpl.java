@@ -1,7 +1,7 @@
 package poei.orsys2.produit.service;
 
-import javax.jws.WebParam;
-import javax.jws.WebService;
+import jakarta.jws.WebParam;
+import jakarta.jws.WebService;
 import org.springframework.beans.factory.annotation.Autowired;
 import poei.orsys2.produit.dao.ProduitRepository;
 import poei.orsys2.produit.entities.Produit;
