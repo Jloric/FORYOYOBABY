@@ -18,12 +18,31 @@
 	</properties>
 	<dependencies>
 		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>5.6.9.Final</version>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web-services</artifactId>
+		</dependency>
+		<!-- tag::springws[] -->
+		<dependency>
+			<groupId>wsdl4j</groupId>
+			<artifactId>wsdl4j</artifactId>
+		</dependency>
+		<!-- end::springws[] -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>
@@ -36,37 +55,36 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.sun.xml.ws</groupId>
-			<artifactId>jaxws-rt</artifactId>
-			<version>4.0.0</version>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>jakarta.xml.bind</groupId>
-			<artifactId>jakarta.xml.bind-api</artifactId>
-			<version>4.0.0</version>
+			<groupId>javax.jws</groupId>
+			<artifactId>javax.jws-api</artifactId>
+			<version>1.1</version>
 		</dependency>
 		<dependency>
 			<groupId>jakarta.xml.ws</groupId>
 			<artifactId>jakarta.xml.ws-api</artifactId>
-			<version>4.0.0</version>
+			<version>3.0.0</version>
 		</dependency>
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-impl</artifactId>
+			<version>2.3.1</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.xml.ws</groupId>
+			<artifactId>jaxws-rt</artifactId>
+			<version>2.3.1</version>
+			<scope>runtime</scope>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>com.sun.xml.ws</groupId>
-				<artifactId>jaxws-maven-plugin</artifactId>
-				<version>2.3.2</version>
-				<configuration>
-					<wsdlUrls>
-						<wsdlUrl>http://localhost:8888/ws/produit?wsdl</wsdlUrl>
-					</wsdlUrls>
-					<keep>true</keep>
-					<packageName>poei.orsys2.produit</packageName>
-					<sourceDestDir>src/main/java</sourceDestDir>
-				</configuration>
-			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>

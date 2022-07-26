@@ -1,16 +1,14 @@
 package poei.orsys2.produit.service;
 
-import jakarta.jws.WebParam;
-import jakarta.jws.WebService;
-import org.apache.catalina.LifecycleState;
+import javax.jws.WebParam;
+import javax.jws.WebService;
 import org.springframework.beans.factory.annotation.Autowired;
 import poei.orsys2.produit.dao.ProduitRepository;
 import poei.orsys2.produit.entities.Produit;
 
 import java.util.List;
-import java.util.Optional;
 
-@WebService(endpointInterface = "com.orsys.ws.server.soap.ProduitService")
+@WebService
 public class ProduitServiceImpl implements ProduitService{
     @Autowired
     ProduitRepository produitRepository;
@@ -32,6 +30,8 @@ public class ProduitServiceImpl implements ProduitService{
     @Override
     public Produit findById(@WebParam(name="id") int id){
         Produit p=produitRepository.findById(id).get();
+        System.out.println("voici le porduit demander:");
+        System.err.println(p);
         return p;
     }
 
