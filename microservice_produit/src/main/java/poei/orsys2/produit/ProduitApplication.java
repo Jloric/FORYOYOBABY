@@ -6,6 +6,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import poei.orsys2.produit.dao.ProduitRepository;
 import poei.orsys2.produit.entities.Produit;
+import poei.orsys2.produit.service.ProduitServiceImpl;
+
+import javax.xml.ws.Endpoint;
 
 
 @SpringBootApplication
