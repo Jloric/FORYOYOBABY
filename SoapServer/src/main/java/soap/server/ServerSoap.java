@@ -20,9 +20,9 @@ public class ServerSoap implements CommandLineRunner{
 
 	public void run(String... args) throws Exception {
 		Endpoint endpoint = Endpoint.create(new ProduitServiceImpl());
-        endpoint.publish("http://localhost:8888/ProduitWS");
+        endpoint.publish("http://localhost:8889/ProduitWS");
         System.out.println("Le server SOAP est en ligne, le WSDL de produit est disponible sur:");
-        System.err.println("http://localhost:8888/ProduitWS?wsdl");
+        System.err.println("http://localhost:8889/ProduitWS?wsdl");
         Produit p1= new Produit("une robe de prestige","robe.jpg",2.40, "robe bleu");
         produitRepository.save(p1);
 		System.out.print(produitRepository.findById(1));
