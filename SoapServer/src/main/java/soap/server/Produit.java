@@ -1,4 +1,4 @@
-package poei.orsys2.produit.entities;
+package soap.server;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Produit {
-    @Id @GeneratedValue
+	@Id @GeneratedValue
     private int id;
 
     private String description;

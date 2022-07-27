@@ -1,22 +1,24 @@
-package com.orsys.ws.server.soap;
+package poei.orsys2.produit.service;
 
-import jakarta.jws.WebParam;
-import jakarta.jws.WebService;
+import javax.jws.WebParam;
+import javax.jws.WebService;
 import org.springframework.beans.factory.annotation.Autowired;
+import poei.orsys2.produit.dao.ProduitRepository;
+import poei.orsys2.produit.entities.Produit;
 
-import java.util.Optional;
+import java.util.List;
 
-@WebService(endpointInterface = "com.orsys.ws.server.soap.ProduitService")
+@WebService
 public class ProduitServiceImpl implements ProduitService{
     @Autowired
     ProduitRepository produitRepository;
 
-
     @Override
-    public String getProduits() {
+    public List<Produit> getProduits() {
         System.err.println("Voici la liste des produits");
-        return "JAXB n'aime pas les interfaces";
+        return produitRepository.findAll();
     }
+
 
     @Override
     public Produit create(Produit p) {
@@ -26,8 +28,10 @@ public class ProduitServiceImpl implements ProduitService{
     }
 
     @Override
-    public Optional<Produit> findById(@WebParam(name="id") int id){
-        Optional<Produit> p=produitRepository.findById(id);
+    public Produit findById(@WebParam(name="id") int id){
+        Produit p=produitRepository.findById(id).get();
+        System.out.println("voici le porduit demander:");
+        System.err.println(p);
         return p;
     }
 

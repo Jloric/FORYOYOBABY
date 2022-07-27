@@ -1,6 +1,5 @@
 package poei.orsys2.produit.dao;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import poei.orsys2.produit.entities.Produit;
 import org.springframework.data.jpa.repository.JpaRepository;
 
